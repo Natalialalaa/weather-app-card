@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import WeatherApp from "./WeatherApp";
+import CityInput from "./CityInput";
 
 function App() {
+  const [selectedCity, setSelectedCity] = useState(null);
+  const handleSelectCity = (city) => {
+    setSelectedCity(city);
+  };
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Today's weather</h1>
       </header>
+      <main>
+        <CityInput onSelectCity={handleSelectCity} />{" "}
+        {/* Render CityInput comp */}
+        <WeatherApp city={selectedCity} />{" "}
+        {/* Pass city selectedto  WeatherApp comp*/}
+      </main>
     </div>
   );
 }

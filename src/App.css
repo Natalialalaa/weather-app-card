@@ -2,6 +2,13 @@
   text-align: center;
 }
 
+body {
+  background-color: #dff8ff;
+}
+div.App main div div h2 {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: #3965bf;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -13,9 +20,27 @@
   }
 }
 
+.App > main > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.App > main:nth-child(2) > div:nth-child(2) > div:nth-child(1) {
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 20px;
+}
+
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #3965bf;
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
